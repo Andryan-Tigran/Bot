@@ -54,7 +54,7 @@ async def get_message(message : types.Message):
                 await bot.send_message(chat_id=message.chat.id, text=traning_list[number][i])
         else:
             await bot.send_message(chat_id=message.chat.id,
-                                   text=message.text[5:] + " - это не число или чисто меньше 0")
+                                   text=message.text[9:] + " - это не число или число меньше 0")
 
 
 
@@ -74,7 +74,7 @@ async def get_message(message : types.Message):
                 await bot.send_message(chat_id=message.chat.id, text=algo_tasks[number][i])
         else:
             await bot.send_message(chat_id=message.chat.id,
-                                   text=message.text[5:] + " - это не число или чисто меньше 0")
+                                   text=message.text[5:] + " - это не число или число меньше 0")
     elif (len(message.text) > 5 and message.text[0:5] == 'algo.'):
         number = message.text[5:]
         if (number.isnumeric()):
@@ -89,7 +89,7 @@ async def get_message(message : types.Message):
                 await bot.send_message(chat_id=message.chat.id, text=algo_video_links[number])
 
         else:
-            await bot.send_message(chat_id=message.chat.id, text=message.text[5:] + " - это не число или чисто меньше 0")
+            await bot.send_message(chat_id=message.chat.id, text=message.text[5:] + " - это не число или число меньше 0")
 
     else:
         await bot.send_message(chat_id=message.chat.id, text="Твоя моя не понимать")
